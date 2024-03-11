@@ -1,0 +1,29 @@
+<!--pages/vpn/index.wxml-->
+<cu-custom bgColor="bg-white">
+</cu-custom>
+<view class="container">
+  <view class="header">
+    <image src="/asset/imgs/logo.jpg" mode="aspectFit"></image>
+  </view>
+  <view class="vpn_message">
+    <text>检测到您在校外，请连接校园VPN后再登录</text>
+  </view>
+  <view class="login">
+    <view class="former-item">
+      <image src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ionicon%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M258.9%2048C141.92%2046.42%2046.42%20141.92%2048%20258.9c1.56%20112.19%2092.91%20203.54%20205.1%20205.1%20117%201.6%20212.48-93.9%20210.88-210.88C462.44%20140.91%20371.09%2049.56%20258.9%2048zm126.42%20327.25a4%204%200%2001-6.14-.32%20124.27%20124.27%200%2000-32.35-29.59C321.37%20329%20289.11%20320%20256%20320s-65.37%209-90.83%2025.34a124.24%20124.24%200%2000-32.35%2029.58%204%204%200%2001-6.14.32A175.32%20175.32%200%200180%20259c-1.63-97.31%2078.22-178.76%20175.57-179S432%20158.81%20432%20256a175.32%20175.32%200%2001-46.68%20119.25z%22%2F%3E%3Cpath%20d%3D%22M256%20144c-19.72%200-37.55%207.39-50.22%2020.82s-19%2032-17.57%2051.93C191.11%20256%20221.52%20288%20256%20288s64.83-32%2067.79-71.24c1.48-19.74-4.8-38.14-17.68-51.82C293.39%20151.44%20275.59%20144%20256%20144z%22%2F%3E%3C%2Fsvg%3E" />
+      <input type="text" model:value="{{username}}" placeholder="学号" bindinput="textCallback" />
+    </view>
+    <view class="former-item">
+      <image src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ionicon%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M336%20208v-95a80%2080%200%2000-160%200v95%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2232%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%22208%22%20width%3D%22320%22%20height%3D%22272%22%20rx%3D%2248%22%20ry%3D%2248%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2232%22%2F%3E%3C%2Fsvg%3E" />
+        <input type="password" model:value="{{password}}" placeholder="校园上网密码" bindinput="textCallback" />
+    </view>
+    <view bind:tap="switchStatus" class="checkbox-item">
+      <checkbox checked="{{saveCount}}" class="theme"></checkbox>
+      <view class="margin-left-sm">记住我（仅储存在本地）</view>
+    </view>
+    <button bind:tap="vpn_login">连接VPN</button>
+  </view>
+  <text class="fail-login" id="msg">{{msg}}</text>
+  <text style="background-color:none;height: 5%;position: fixed;bottom: 30rpx;width: 100%;text-align: center;">Copyright ©2024 Ignitelab Team. 
+  All rights reserved.</text>
+</view>

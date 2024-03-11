@@ -1,0 +1,14 @@
+/**app.wxss**/
+@import "./style/main.wxss";
+.container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-height:100vh;
+} 
+
+view {
+  box-sizing: border-box;
+}

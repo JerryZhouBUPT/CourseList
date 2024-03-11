@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "we-script": "we-script"
+  }, 
+  "disableScroll": true
+}

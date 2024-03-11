@@ -1,0 +1,46 @@
+function getDetailTime(arr) {
+  var weekday = {
+    '1': '周一', 
+    '2': '周二', 
+    '3': '周三', 
+    '4': '周四', 
+    '5': '周五', 
+    '6': '周六', 
+    '7': '周日'
+  };
+  var classTime = {
+    '1': ['8:00', '8:45'], 
+    '2': ['8:50', '9:35'], 
+    '3': ['9:50', '10:35'], 
+    '4': ['10:40', '11:25'], 
+    '5': ['11:30', '12:15'], 
+    '6': ['13:00', '13.45'], 
+    '7': ['13:50', '14:35'], 
+    '8': ['14:45', '15:30'], 
+    '9': ['15:40', '16:25'], 
+    '10': ['16:35', '17:20'], 
+    '11': ['17:25', '18:10'], 
+    '12': ['18:30', '19:15'], 
+    '13': ['19:20', '20:05'], 
+    '14': ['20:10', '20:55']
+  }
+  var weekDuration = '第' + getweekDuration(arr[2]) + '周'
+  var Day = weekday[arr[0].toString()]
+  var end = (arr[1][0] + arr[1][1] - 1).toString()
+  var classTimeSection = '第' + arr[1][0].toString() + '-' + end + '节'
+  var Duration = '(' + classTime[arr[1][0].toString()][0] + '-' + classTime[end][1] + ')'
+  return weekDuration + '，' + Day + '，' + classTimeSection + Duration
+}
+
+function getweekDuration(arr) {
+  if (arr.length === 1) {
+    return arr[0].toString()
+  }
+  else {
+    return arr[0].toString() + '-' + arr[arr.length - 1].toString()
+  }
+}
+
+module.exports = {
+  getDetailTime: getDetailTime
+}
